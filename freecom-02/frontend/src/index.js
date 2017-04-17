@@ -2,6 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import './index.css'
+import ApolloClient, {createNetworkInterface} from 'apollo-client'
+import {ApolloProvider} from 'react-apollo'
+
+const networkInterface = createNetworkInterface({uri: 'https://api.graph.cool/simple/v1/cj1l2czuj2nf10161obos6ahp'})
+const client = new ApolloClient({networkInterface, dataIdFromObject: o => o.id})
+
 
 const freecom = {
   render,
@@ -20,7 +26,9 @@ function render(element) {
   }
 
   ReactDOM.render(
-    <App freecom={freecom}/>
+    <ApolloProvider client={client}>
+      <App freecom={freecom}/>
+    </ApolloProvider>
     ,
     element
   )
