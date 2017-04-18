@@ -1,0 +1,56 @@
+# projectId: "cj1npvp93esvi0153e1v9hvy4"
+
+type Agent {
+  conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
+  createdAt: DateTime!
+  id: ID!
+  imageUrl: String!
+  messages: [Message!]! @relation(name: "MessagesFromAgents")
+  slackUserId: String!
+  slackUserName: String!
+  updatedAt: DateTime!
+}
+
+type Conversation {
+  agent: Agent @relation(name: "ConversationsFromAgent")
+  createdAt: DateTime!
+  customer: Customer @relation(name: "ConversationsFromCustomer")
+  id: ID!
+  messages: [Message!]! @relation(name: "MessagesInConversation")
+  slackChannelIndex: Int!
+  updatedAt: DateTime!
+}
+
+type Customer {
+  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  updatedAt: DateTime!
+}
+
+type File {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime!
+  url: String!
+}
+
+type Message {
+  agent: Agent @relation(name: "MessagesFromAgents")
+  conversation: Conversation @relation(name: "MessagesInConversation")
+  createdAt: DateTime!
+  id: ID!
+  text: String!
+  updatedAt: DateTime!
+}
+
+type User {
+  createdAt: DateTime!
+  id: ID!
+  updatedAt: DateTime!
+}
