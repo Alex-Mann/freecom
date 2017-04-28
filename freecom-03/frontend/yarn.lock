@@ -2378,6 +2378,12 @@ graphql-tag@^1.1.1, graphql-tag@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-1.2.4.tgz#90c59bea41378513fd7213dc92537fcd20e4570f"
 
+graphql@^0.9.1:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.4.tgz#04c8d5804139539995f2d9c3c97d8090dd1480fe"
+  dependencies:
+    iterall "1.0.3"
+
 growly@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
@@ -2868,6 +2874,10 @@ istanbul-reports@^1.0.0:
   resolved "https://registry.yarnpkg.com/istanbul-reports/-/istanbul-reports-1.0.1.tgz#9a17176bc4a6cbebdae52b2f15961d52fa623fbc"
   dependencies:
     handlebars "^4.0.3"
+
+iterall@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.0.3.tgz#e0b31958f835013c323ff0b10943829ac69aa4b7"
 
 jest-changed-files@^17.0.2:
   version "17.0.2"
@@ -4906,13 +4916,14 @@ style-loader@0.13.1:
   dependencies:
     loader-utils "^0.2.7"
 
-subscriptions-transport-ws@0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/subscriptions-transport-ws/-/subscriptions-transport-ws-0.5.4.tgz#1091e55e73bff0d691a86570ac2b97ff6fb35cfc"
+subscriptions-transport-ws@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/subscriptions-transport-ws/-/subscriptions-transport-ws-0.5.5.tgz#7715ed4306f532a9dd53c02cbd789d2ee8871bb9"
   dependencies:
     "@types/ws" "0.0.38"
     backo2 "^1.0.2"
     eventemitter3 "^2.0.2"
+    graphql "^0.9.1"
     graphql-subscriptions "^0.3.0"
     graphql-tag "^1.2.4"
     lodash.isobject "^3.0.2"

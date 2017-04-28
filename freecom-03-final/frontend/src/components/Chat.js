@@ -159,7 +159,7 @@ class Chat extends Component {
       },
       onError: (err) => {
         console.error('Chat - An error occured while being subscribed: ', err, 'Subscribe again')
-        componentRef._subscribeToNewMessages(componentRef)
+        componentRef._subscribeToNewMessages(componentRef) // if there is an error, resubscribe
       }
     })
 
